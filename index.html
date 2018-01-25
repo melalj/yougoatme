@@ -318,7 +318,20 @@
     .footer-credits strong {
       font-size: 16px;
       font-weight: bold;
-    }      
+    }
+    @media (max-width: 768px) {
+      .footer-links {
+        text-align: left;
+      }
+      .footer-links li {
+        display: block;
+        padding: 15px 20px;
+      }
+      .footer-links li:after {
+        content: "";
+        margin: 0;
+      }
+    }
   </style>
 </head>
 <body>
