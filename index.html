@@ -126,14 +126,22 @@
       background: rgb(255, 100, 162);
       box-shadow: 0 3px 0 0 #C34A7A;
       border-radius: 100px;
-      font-size: 32px;
+      font-size: 28px;
       color: #ffffff;
-      padding: 25px 50px;
-      margin: 10px;
+      padding: 20px 50px;
+      margin: 20px 10px;
       font-weight: bolder;
       text-decoration: none;
       transform: translateY(0);
       transition: transform .3s, background-color .3s, box-shadow .3s;
+    }
+
+		@media (max-width: 768px) {
+      .btn {
+        font-size: 26px;
+        padding: 20px 50px;
+        
+      }
     }
 
     .btn:hover {
@@ -332,6 +340,37 @@
         margin: 0;
       }
     }
+
+    .cta {
+      background: #FFFFFF;
+      border: 1px solid #E8F8FD;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.01);
+      border-radius: 2px;
+      width: 450px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      color: #7D8D96;
+    }
+
+    .cta h2{
+      color: #2BA6C8;
+      margin: 5px;      
+    }
+    .cta p{
+      margin: 0;      
+    }
+    .cta-content{
+      padding: 20px;      
+    }
+    .cta img{
+      width: 100%;
+      height: auto;
+    }
+    @media (max-width: 500px) {
+      .cta {
+        width: 300px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -342,12 +381,12 @@
     </div>
     <div class="hero-center container">
       <div class="main-left">
-        <h1>Get goat swag,<br> Help a child</h1>
+        <h1>Get a goat toy,<br> Help a child</h1>
         <p>
           With every purchase, we provide 3 days of boarding school for a girl in Morocco ❤️ 
         </p>
-        <div class="actions">
-          <a href="#" class="btn">Shop now</a>
+        <div class="actions" align="center">
+          <a href="http://eepurl.com/dkJ1q9" class="btn">Buy now</a>
           <legend>Free shipping worldwide</legend>
         </div>
       </div>
@@ -378,14 +417,25 @@
   </section>
   <!-- END STORY -->
 
+  <div class="cta">
+    <img src="./images/toy.jpg" alt="Toy" />
+    <div class="cta-content">
+      <h2>Let's make impact with goats!</h2>
+      <p>For every goat toy you purchase, a girls get 3 days of boarding school</p>
+      <div align="center">
+        <a href="http://eepurl.com/dkJ1q9" class="btn">Buy now</a>
+      </div>
+    </div>
+  </div>
+
   <!-- BEGIN FOOTER -->   
   <footer>
     <ul class="footer-links">
-      <li><a href="#">Homepage</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Our Story</a></li>
-      <li><a href="#">Press enquiry</a></li>
-      <li><a href="#">Education For All</a></li>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="http://eepurl.com/dkJ1q9">Shop</a></li>
+      <li><a href="/">Our Story</a></li>
+      <li><a href="yougoatme@tonoid.com">Press enquiry</a></li>
+      <li><a href="https://www.efamorocco.org/">Education For All</a></li>
     </ul>
     <div class="footer-credits">
       <strong>Made with <span class="pink">♥</span> in San Francisco</strong><br>
