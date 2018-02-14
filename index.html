@@ -97,8 +97,69 @@
 
     .main-right {
       width: 320px;
-      margin-left: 50px;
+      margin: 30px 40px;
       justify-content: flex-end;
+    }
+
+    .illo-container {
+      position: relative;
+      width: 380px;
+      height: 380px;
+      background: transparent url('./images/illos.png');
+      background-size: 1140px 760px;
+      background-position: 0 0;
+    }
+
+    .illo-container[data-pos="illo-open"] {
+      background-position: 0 380px;
+    }
+
+    .illo-container[data-pos="illo-right"] {
+      background-position: 380px 0;
+    }
+
+    .illo-container[data-pos="illo-left"] {
+      background-position: 380px 380px;
+    }
+
+    .illo-container[data-pos="illo-top"] {
+      background-position: 760px 0;
+    }
+
+    .illo-container[data-pos="illo-bottom"] {
+      background-position: 760px 380px;
+    }
+
+    .illo-container .illo-top {
+      position: absolute;
+      height: 150px;
+      top: -60px;
+      left: 40px;
+      right: 40px;
+    }
+
+    .illo-container .illo-bottom {
+      position: absolute;
+      height: 150px;
+      bottom: -40px;
+      left: 40px;
+      right: 40px;
+    }
+
+    .illo-container .illo-left {
+      position: absolute;
+      width: 150px;
+      bottom: 50px;
+      top: 50px;
+      left: -40px;
+    }
+
+    .illo-container .illo-right {
+      position: absolute;
+      width: 150px;
+      bottom: 50px;
+      top: 50px;
+      right: -40px;
     }
 
     .actions {
@@ -404,7 +465,12 @@
         </div>
       </div>
       <div class="main-right">
-        <img src="./images/illo.svg" alt="Goat face" width="326px" height="326px" />
+        <div class="illo-container">
+          <div class="illo-top" data-hover></div>
+          <div class="illo-bottom" data-hover></div>
+          <div class="illo-left" data-hover></div>
+          <div class="illo-right" data-hover></div>
+        </div>
       </div>
     </div>
     <div class="hero-bottom">
@@ -457,5 +523,33 @@
   </footer>
   <!-- END FOOTER -->   
   
+  <audio src="meeh.mp3" preload="auto" id="meeh"/>
+
+  <script>
+    var illoPos = document.querySelectorAll('[data-hover');
+    var illoContainer = document.querySelector('.illo-container');
+    var lastPos = null;
+    for (var i = 0; i < illoPos.length; i++) {
+      illoPos[i].addEventListener('mouseover', function() {
+        illoContainer.setAttribute('data-pos', this.getAttribute('class'));
+        lastPos = this.getAttribute('class');
+      });
+      illoPos[i].addEventListener('mouseout', function() {
+        illoContainer.removeAttribute('data-pos');
+        lastPos = null;
+      });
+    }
+    illoContainer.addEventListener('mousedown', function() {
+      this.setAttribute('data-pos', 'illo-open');
+      document.getElementById('meeh').currentTime = 0;
+      document.getElementById('meeh').play();
+    });
+
+    illoContainer.addEventListener('mouseup', function() {
+      this.setAttribute('data-pos', lastPos);
+      document.getElementById('meeh').pause();
+      
+    });
+  </script>
 </body>
 </html>
