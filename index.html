@@ -539,10 +539,16 @@
     var illoPos = document.querySelectorAll('[data-hover');
     var illoContainer = document.querySelector('.illo-container');
     var lastPos = null;
+    var playedIllo = false;
+    var meehIllo = false;
     for (var i = 0; i < illoPos.length; i++) {
       illoPos[i].addEventListener('mouseover', function() {
         illoContainer.setAttribute('data-pos', this.getAttribute('class'));
         lastPos = this.getAttribute('class');
+        if (!playedIllo) {
+          gtag('event', 'illo-over', { 'event_category': this.getAttribute('class') });
+          playedIllo = true;
+        }
       });
       illoPos[i].addEventListener('mouseout', function() {
         illoContainer.removeAttribute('data-pos');
@@ -553,12 +559,34 @@
       this.setAttribute('data-pos', 'illo-open');
       document.getElementById('meeh').currentTime = 0;
       document.getElementById('meeh').play();
+      if (!meehIllo) {
+        gtag('event', 'illo-meeh', { 'event_category': this.getAttribute('class') });
+        meehIllo = true;
+      }
     });
 
     illoContainer.addEventListener('mouseup', function() {
       this.setAttribute('data-pos', lastPos);
       document.getElementById('meeh').pause();
       
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110375132-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110375132-3');
+
+    document.querySelector('.actions .btn').addEventListener('click', function () {
+      gtag('event', 'cta-click', { 'event_category' : 'hero' });
+    });
+
+    document.querySelector('.cta .btn').addEventListener('click', function () {
+      gtag('event', 'cta-click', { 'event_category' : 'bottom' });
     });
   </script>
 </body>
