@@ -588,6 +588,13 @@
     document.querySelector('.cta .btn').addEventListener('click', function () {
       gtag('event', 'cta-click', { 'event_category' : 'bottom' });
     });
+
+    window.setTimeout(function() {
+      illoContainer.setAttribute('data-pos', 'illo-left');
+        window.setTimeout(function() {
+          illoContainer.removeAttribute('data-pos');
+        }, 500);
+    }, 3000);
   </script>
 </body>
 </html>
