@@ -14,463 +14,41 @@
   />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-	<meta charset="utf-8" />
-  <style>
-    @font-face {
-			font-family: 'Museo';
-			src: url('./fonts/Museo-900.woff');
-			font-weight: bolder;
-			font-style: normal;
-		}
-
-		@font-face {
-			font-family: 'Museo';
-			src: url('./fonts/Museo-700.woff');
-			font-weight: bold;
-			font-style: normal;
-		}
-
-		@font-face {
-			font-family: 'Museo';
-			src: url('./fonts/Museo-300.woff');
-			font-weight: bolder;
-			font-style: normal;
-		}
-
-    body {
-      font-family: 'Museo', 'Helvetica', 'san-serif';
-      font-size: 18px;
-      background-color: #FEFEFE;
-      color: #2BA6C8;
-      padding: 0;
-      margin: 0;
-    }
-
-    section.hero {
-      color: #ffffff;
-      background-color: #4AD5FD;
-      border-bottom: 2px solid #2FA7C9; 
-    }
-
-    section.hero h1 {
-      font-size: 54px;
-      font-weight: bolder;
-      margin: 0;
-      margin-bottom: 10px;
-    }
-
-    section.hero p {
-      font-size: 28px;
-      font-weight: normal;
-      margin: 0;
-    }
-
-		@media (max-width: 768px) {
-      section.hero h1 {
-        font-size: 34px;
-      }
-      section.hero p {
-        font-size: 22px;
-      }      
-    }
-
-    section.hero legend {
-      font-weight: normal;
-      font-size: 18px;
-    }
-
-    section.hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    section.hero .hero-top {
-      display: flex;
-      height: 60px;
-      align-items: center;
-    }
-
-    section.hero .hero-center {
-      display: flex;
-      flex-grow: 1;
-      align-items: center;
-      flex-direction: row;
-      justify-content: space-between;
-      margin: 30px auto;
-    }
-
-    .main-left {
-      flex-grow: 1;
-    }
-
-    .main-right {
-      width: 320px;
-      margin: 30px 40px;
-      justify-content: flex-end;
-    }
-
-    .illo-container {
-      position: relative;
-      width: 380px;
-      height: 380px;
-      background: transparent url('./images/illos.png');
-      background-size: 1140px 760px;
-      background-position: 0 0;
-      cursor: pointer;
-    }
-
-    .illo-container[data-pos="illo-open"] {
-      background-position: 0 380px;
-    }
-
-    .illo-container[data-pos="illo-right"] {
-      background-position: 380px 0;
-    }
-
-    .illo-container[data-pos="illo-left"] {
-      background-position: 380px 380px;
-    }
-
-    .illo-container[data-pos="illo-top"] {
-      background-position: 760px 0;
-    }
-
-    .illo-container[data-pos="illo-bottom"] {
-      background-position: 760px 380px;
-    }
-
-    .illo-container .illo-top {
-      position: absolute;
-      height: 150px;
-      top: -60px;
-      left: 40px;
-      right: 40px;
-    }
-
-    .illo-container .illo-bottom {
-      position: absolute;
-      height: 150px;
-      bottom: -40px;
-      left: 40px;
-      right: 40px;
-    }
-
-    .illo-container .illo-left {
-      position: absolute;
-      width: 150px;
-      bottom: 50px;
-      top: 50px;
-      left: -40px;
-    }
-
-    .illo-container .illo-right {
-      position: absolute;
-      width: 150px;
-      bottom: 50px;
-      top: 50px;
-      right: -40px;
-    }
-
-    .actions {
-      padding: 40px 0;
-      display: inline-block;
-    }
-    
-    .actions legend {
-      text-align: center;
-    }
-
-		@media (max-width: 768px) {
-      .main-left {
-        text-align: center;
-      }
-
-      .main-right {
-        display: none;
-      }
-
-      .actions {
-        text-align: center;
-      }
-    }
-
-    section.hero .hero-bottom {
-      display: flex;
-      height: 50px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-block;
-      background: rgb(255, 100, 162);
-      box-shadow: 0 3px 0 0 #C34A7A;
-      border-radius: 100px;
-      font-size: 28px;
-      color: #ffffff;
-      padding: 20px 50px 21px;
-      margin: 20px 10px;
-      font-weight: bolder;
-      text-decoration: none;
-      transform: translateY(0);
-      transition: transform .3s, background-color .3s, box-shadow .3s;
-    }
-
-		@media (max-width: 768px) {
-      .btn {
-        font-size: 24px;
-      }
-    }
-
-    .btn:hover {
-      background: rgb(255, 118, 173);
-      transform: translateY(-1px);      
-      box-shadow: 0 4px 0 0 #C34A7A;
-    }
-
-    .btn:active {
-      background: rgb(212, 65, 124);
-      transform: translateY(1px);      
-      box-shadow: 0 2px 0 0 #C34A7A;
-    }
-
-    .container {
-			margin: 0 auto;
-      padding: 20px;
-		}
-
-		@media (min-width: 768px) {
-			.container {
-				width: 768px;
-			}
-		}
-
-    @media (min-width: 1024px) {
-			.container {
-				width: 1024px;
-			}
-		}
-
-    @media (min-width: 1224px) {
-			.container {
-				width: 1224px;
-			}
-		}
-
-    .arrow-down {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      background: transparent url('./images/arrow-down.svg');
-      margin: 0 10px;
-    }
-
-    .story {
-      background: transparent url('./images/path.svg') no-repeat;
-      background-position-x: center; 
-      min-height: 1571px;
-      width: 1024px;
-      margin: 0 auto;
-    }
-
-    .story article {
-      display: flex;
-      height: 500px;
-    }
-
-    .story article:nth-child(1) {
-      flex-direction: row-reverse;
-    }
-
-    .story article:nth-child(2) {
-      flex-direction: row;
-    }
-
-    .story article:nth-child(3) {
-      flex-direction: row-reverse;
-    }
-
-    .story article .text, .story article .image {
-      display: flex;
-      width: 50%;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .story article .text {
-      font-size: 28px;
-      font-weight: bold;
-      padding: 20px;
-      text-align: left;
-    }
-
-    .pink {
-      color: #FD64A0;
-    }
-
-    @media (max-width: 1024px) {
-			.story {
-        background: transparent url('./images/path-mobile.png') repeat-y;
-        background-position: 20px;
-        background-size: 6px 2px;
-        width: 100%;
-        min-height: inherit;
-			}
-
-      .story article {
-				display: block;        
-      }
-
-      .story article {
-        height: auto;
-        width: auto;
-        padding: 30px 0;
-      }
-
-      .story article .text {
-        font-size: 20px;
-        padding: 10px 20px;
-        padding-left: 30px;
-        text-align: left;
-        justify-content: flex-start;
-      }
-
-      .story article .image {
-        padding-left: 20px;
-      }
-
-      .story article .text, .story article .image {
-        width: auto;
-        height: auto;
-      }
-		}
-
-    @media (max-width: 462px) {
-      .story article .image img {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    footer {
-      width: 100%;
-    }
-
-    .footer-links {
-      background-color: #46D4FC;
-      border-top: 1px solid #2BA6C8;
-      list-style: none;
-      color: #E4FEFF;
-      font-size: 18px;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      display: inline-block;
-      padding: 20px 0;
-    }
-
-    .footer-links li a {
-      text-decoration: none;
-      color: #E4FEFF;
-    }
-
-    .footer-links li a:hover {
-      text-decoration: underline;
-      color: #ffffff;          
-    }
-
-
-    .footer-links li:last-child:after {
-      content: "";
-    }
-
-    .footer-links li:after {
-      content: "|";
-      margin: 0 30px;
-    }
-
-    .footer-credits {
-      background-color: #46C8EC;
-      border-top: 1px solid #3CBEE3;
-      text-align: center;
-      font-size: 14px;
-      color: #E4FEFF;
-      padding: 30px 0;   
-    }
-
-    .footer-credits strong {
-      font-size: 16px;
-      font-weight: bold;
-    }
-    @media (max-width: 768px) {
-      .footer-links {
-        text-align: left;
-      }
-      .footer-links li {
-        display: block;
-        padding: 15px 20px;
-      }
-      .footer-links li:after {
-        content: "";
-        margin: 0;
-      }
-    }
-
-    .cta {
-      background: #FFFFFF;
-      border: 1px solid #E8F8FD;
-      box-shadow: 0 0 8px 0 rgba(0,0,0,0.01);
-      border-radius: 2px;
-      width: 450px;
-      margin: 0 auto;
-      margin-bottom: 20px;
-      color: #7D8D96;
-    }
-
-    .cta h2{
-      font-size: 28px;
-      color: #2BA6C8;
-      margin: 5px 0;      
-    }
-    .cta p{
-      margin: 0;      
-    }
-    .cta-content{
-      padding: 20px;      
-    }
-    .cta img{
-      width: 100%;
-      height: auto;
-    }
-    @media (max-width: 500px) {
-      .cta {
-        width: 300px;
-      }
-      .cta h2{
-        font-size: 20px;
-      }
-      
-    }
-  </style>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- BEGIN HEADER -->
+  <header>
+    <nav>
+      <div class="container">
+        <div class="navbar-header">
+          <img id="nav-toggle" class="nav-toggle" async src="./images/menu.svg" alt="Menu" />
+          <a href="/"><img class="nav-brand" async src="./images/logo.svg" alt="YouGoatMe" /></a>
+          <a href="#" class="btn btn-sm nav-cta">Shop now</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">#EducationForAll</a></li>
+            <li><a href="#">Cart</a></li>
+          </ul>
+        </div>
+			</div>
+    </nav>
+  </header>
+  <!-- END HEADER -->
   <!-- BEGIN HERO --> 
   <section class="hero">
-    <div class="hero-top container">
-      <img async src="./images/logo.svg" alt="YouGoatMe" />
-    </div>
     <div class="hero-center container">
       <div class="main-left">
         <h1>Get a goat toy,<br> Help a child</h1>
         <p>
-          With every purchase, we provide 3 days of boarding school for a girl in Morocco ❤️ 
+        	With every goat toy you purchase, we provide 3 days of boarding school for a girl in Morocco ❤️ 
         </p>
         <div class="actions">
-          <a href="http://eepurl.com/dkJ1q9" class="btn">Contribute now</a>
+          <a href="http://eepurl.com/dkJ1q9" class="btn">Shop now</a>
           <legend>Free shipping worldwide</legend>
         </div>
       </div>
@@ -484,7 +62,7 @@
       </div>
     </div>
     <div class="hero-bottom">
-        <div class="arrow-down"></div> Scroll for more details <div class="arrow-down"></div>
+        <div class="arrow-down"></div> Scroll to discover <div class="arrow-down"></div>
     </div>
   </section>
   <!-- BEGIN HERO --> 
@@ -496,11 +74,11 @@
       <div class="image"><img async src="./images/img-1.png" width="462px" height="367px" alt="Goat tree" /></div>
     </article>
     <article>
-      <div class="text"><div>...where illiteracy is <span class="pink">70%</span> because schools are very far from remote rural areas.</div></div>
+      <div class="text"><div>...where girls illiteracy is <span class="pink">70%</span> because schools are very far from remote rural areas.</div></div>
       <div class="image"><img async src="./images/img-2.png" width="451px" height="313px" alt="Illiteracy in Morocco" /></div>
       </article>
     <article>
-      <div class="text"><div>We want to give girls the chance of education in Morocco because we believe if you educate a girl, you educate the next generation as well</div></div>
+      <div class="text"><div>Let's give girls the chance of education because if you educate a girl, you educate the next generation as well.</div></div>
       <div class="image"><img async src="./images/img-3.png" width="451px" height="313px" alt="Educated girls" /></div>
     </article>
   </section>
@@ -510,9 +88,9 @@
     <img async src="./images/toy.jpg" alt="Toy" />
     <div class="cta-content">
       <h2>Let's make impact with goats!</h2>
-      <p>For every goat toy you purchase, a girl get 3 days of boarding school</p>
+      <p>We partnered with the non-profit Education For All Morocco to provide school for girls in rural areas.</p>
       <div align="center">
-        <a href="http://eepurl.com/dkJ1q9" class="btn">Buy now</a>
+        <a href="http://eepurl.com/dkJ1q9" class="btn">Shop now</a>
       </div>
     </div>
   </div>
@@ -569,6 +147,35 @@
       this.setAttribute('data-pos', lastPos);
       document.getElementById('meeh').pause();
       
+    });
+
+		var enableScroll = document.querySelector('section.hero') ? document.querySelector('section.hero').getBoundingClientRect().height : 0;
+		var fixedHeader = false;
+		var timeoutFixedEnd;
+    document.addEventListener('scroll', () => {
+      if (!fixedHeader && window.scrollY > enableScroll) {
+        document.querySelector('body').setAttribute('class', 'fixed-header');
+				fixedHeader = true;
+      } else if (fixedHeader && window.scrollY <= 100) {
+        clearTimeout(timeoutFixedEnd);
+        document.querySelector('body').removeAttribute('class');
+        fixedHeader = false;
+      } else if (fixedHeader && window.scrollY <= enableScroll) {
+        document.querySelector('body').setAttribute('class', 'fixed-header fixed-header-end');
+				timeoutFixedEnd = window.setTimeout(function() {
+					document.querySelector('body').removeAttribute('class');
+          fixedHeader = false;
+					timeoutFixedEnd = null;
+				}, 300);
+      } 
+    });
+
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      if (document.getElementById('navbar').getAttribute('class') === 'navbar-collapse collapse') {
+        document.getElementById('navbar').setAttribute('class', 'navbar-collapse')
+      } else {
+        document.getElementById('navbar').setAttribute('class', 'navbar-collapse collapse')
+      }
     });
   </script>
 
