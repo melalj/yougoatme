@@ -71,34 +71,21 @@ section.hero legend {
 }
 
 section.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
 }
 
-section.hero .hero-top {
-  display: flex;
-  height: 60px;
-  align-items: center;
-}
 
 section.hero .hero-center {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 30px auto;
 }
 
 .main-left {
-  flex-grow: 1;
+
 }
 
 .main-right {
-  width: 320px;
-  margin: 30px 40px;
-  justify-content: flex-end;
+  width: 380px;
+  margin: 20px;
+  float: right;
 }
 
 .illo-container {
@@ -109,6 +96,7 @@ section.hero .hero-center {
   background-size: 1140px 760px;
   background-position: 0 0;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .illo-container[data-pos="illo-open"] {
@@ -178,7 +166,9 @@ section.hero .hero-center {
   }
 
   .main-right {
-    display: none;
+    float: none;
+    margin: 0 auto;
+    zoom: 0.7;
   }
 
   .actions {
@@ -310,9 +300,7 @@ section.hero .hero-bottom {
 
 @media (max-width: 1024px) {
   .story {
-    background: transparent url('./images/path-mobile.png') repeat-y;
-    background-position: 20px;
-    background-size: 6px 2px;
+    background: transparent;
     width: 100%;
     min-height: inherit;
   }
@@ -331,8 +319,7 @@ section.hero .hero-bottom {
     font-size: 20px;
     padding: 10px 20px;
     padding-left: 30px;
-    text-align: left;
-    justify-content: flex-start;
+    text-align: center;
   }
 
   .story article .image {
@@ -593,6 +580,14 @@ body.fixed-header-end header {
 
   .navbar-collapse.collapse {
     display: none;
+  }
+
+  .nav > li:first-child {
+    border-top: 1px solid #82e4ff;
+  }
+
+  .nav > li {
+    border-bottom: 1px solid #82e4ff;
   }
 }
 
