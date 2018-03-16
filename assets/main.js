@@ -116,6 +116,7 @@ window.setTimeout(function() {
 
 // FULL GOAT
 var fullGoat = document.querySelector('#goat-action');
+var fullGoatBackground = document.querySelector('.fulltoy-section .goat');
 var fullGoatHadLoggedEvent = false;
 
 var fullGoatFirstSqueeze = 0;
@@ -134,7 +135,7 @@ function fullGoatOnSqueeze() {
 
   fullGoat.parentNode.setAttribute('class', 'fulltoy-section squeezed');
   fullGoatTimeoutSqueeze = window.setTimeout(function() {
-    fullGoat.setAttribute('class', 'goat squeezed');
+    fullGoatBackground.setAttribute('class', 'goat squeezed');
     audioScream.currentTime = 0;
     audioScream.play();
     fullGoatFirstSqueeze = Date.now();  
@@ -154,7 +155,7 @@ function fullGoatOnRelease() {
   fullGoatTimeoutReset = window.setTimeout(function() {
     fullGoatFirstSqueeze = null;
   }, 600);
-  fullGoat.setAttribute('class', 'goat');
+  fullGoatBackground.setAttribute('class', 'goat');
   fullGoat.parentNode.setAttribute('class', 'fulltoy-section');
   audioScream.pause();
 }
@@ -163,3 +164,8 @@ fullGoat.addEventListener('mousedown', fullGoatOnSqueeze);
 fullGoat.addEventListener('touchstart', fullGoatOnSqueeze);
 fullGoat.addEventListener('mouseup', fullGoatOnRelease);
 fullGoat.addEventListener('touchend', fullGoatOnRelease);
+
+// ATTACH LINK TO COLLAGE SHADOW
+document.querySelector('.collage-shadow').addEventListener('click', function() {
+  this.querySelector('a').click();
+});

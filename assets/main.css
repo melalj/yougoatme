@@ -625,10 +625,6 @@ body.fixed-header-end header {
   height: 549px;
   background: transparent url('./images/goat.svg');
   z-index: 20;
-  cursor: pointer;
-  -webkit-touch-callout: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .fulltoy-section .goat.squeezed {
@@ -638,8 +634,19 @@ body.fixed-header-end header {
   background: transparent url('./images/goat-squeezed.svg');
 }
 
-.fulltoy-section .goat-squeezed {
-  background: transparent url('./images/goat-squeezed.svg') no-repeat;
+.fulltoy-section #goat-action {
+  background: transparent url('./images/goat-squeezed.svg') no-repeat -9999px -9999px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -76px; 
+  width: 153px;
+  height: 549px;
+  z-index: 40;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
@@ -701,17 +708,20 @@ body.fixed-header-end header {
 
 .impact-section {
   position: absolute;
-  top: -30px;
+  top: -60px;
   left: 50%;
-  width: 420px;
+  width: 500px;
   margin-left: -225px;
-  height: 200px;
-  padding: 20px;
+  height: 240px;
   background: #FFFFFF;
   border: 1px solid #E8F8FD;
   box-shadow: 0 5px 19px 0 rgba(0,0,0,0.15);
   border-radius: 11px;
   z-index: 50;
+}
+
+.impact-section-container {
+  padding: 20px;
 }
 
 .collage-section {
@@ -732,4 +742,75 @@ body.fixed-header-end header {
   font-size: 18px;
   color: #7D8D96;
   margin: 10px 0 0 0;  
+}
+
+.collage-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 300ms ease-in background-color;
+  cursor: pointer;
+}
+
+.collage-shadow:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.collage-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 64px;
+  position: absolute;
+  bottom: 40px;
+  margin-left: -140px;
+  left: 50%;
+  text-decoration: none;
+  transition: 300ms ease-in background-color;   
+}
+
+.collage-shadow:hover .collage-button {
+  background: rgba(0, 0, 0, 0.8);
+  transition: 300ms ease-in background-color;   
+}
+
+
+@media (max-width: 768px) {
+  .impact-section {
+    position: relative;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    border: 0;
+    height: auto;
+  }
+
+  .collage-section {
+    background-size: 720px 180px;
+    background-position-y: 230px;
+    text-align: center;
+    height: 400px;
+  }
+
+  .collage-shadow{
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .collage-button {
+    position: relative;
+    margin: 0;
+    left: 0;
+    text-align: center;
+    margin-top: 310px;
+    background: rgba(0, 0, 0, 0.8);
+    
+  }
 }
