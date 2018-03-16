@@ -9,13 +9,11 @@
 	<meta name="apple-mobile-web-app-title" content="YouGoatMe" />
 	<meta property="og:site_name" content="YouGoatMe" />
 	<meta property="og:title" content="You Goat Me | Get a goat, help a child" />
-	<meta property="og:image" content="https://yougoatme.com/images/card.jpg" />
+	<meta property="og:image" content="https://yougoatme.com/assets/images/card.jpg" />
 	<meta property="og:description" content="With every purchase, we provide 3 days of boarding school for a girl in Morocco"
   />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/main.css">
 </head>
 <body>
   <!-- BEGIN HEADER -->
@@ -23,8 +21,8 @@
     <nav>
       <div class="container">
         <div class="navbar-header">
-          <img id="nav-toggle" class="nav-toggle" async src="./images/menu.svg" alt="Menu" />
-          <a href="/"><img class="nav-brand" async src="./images/logo.svg" alt="YouGoatMe" /></a>
+          <img id="nav-toggle" class="nav-toggle" async src="./assets/images/menu.svg" alt="Menu" />
+          <a href="/"><img class="nav-brand" async src="./assets/images/logo.svg" alt="YouGoatMe" /></a>
           <a href="http://eepurl.com/dkJ1q9" class="btn btn-sm nav-cta">Shop now</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -70,28 +68,25 @@
   <section class="story">
     <article>
       <div class="text"><div>There's a beautiful area in Morocco with wild goat trees...</div></div>
-      <div class="image"><img async src="./images/img-1.png" width="462px" height="367px" alt="Goat tree" /></div>
+      <div class="image"><img async src="./assets/images/img-1.png" width="462px" height="367px" alt="Goat tree" /></div>
     </article>
     <article>
       <div class="text"><div>...where girls illiteracy is <span class="pink">70%</span> because schools are very far from remote rural areas.</div></div>
-      <div class="image"><img async src="./images/img-2.png" width="451px" height="313px" alt="Illiteracy in Morocco" /></div>
+      <div class="image"><img async src="./assets/images/img-2.png" width="451px" height="313px" alt="Illiteracy in Morocco" /></div>
       </article>
     <article>
       <div class="text"><div>Let's give girls the chance of education because if you educate a girl, you educate the next generation as well.</div></div>
-      <div class="image"><img async src="./images/img-3.png" width="451px" height="313px" alt="Educated girls" /></div>
+      <div class="image"><img async src="./assets/images/img-3.png" width="451px" height="313px" alt="Educated girls" /></div>
     </article>
   </section>
   <!-- END STORY -->
 
-  <div class="cta">
-    <img async src="./images/toy.jpg" alt="Toy" />
-    <div class="cta-content">
-      <h2>Let's make impact with goats!</h2>
-      <p>We partnered with the non-profit Education For All Morocco to provide school for girls in rural areas.</p>
-      <div align="center">
-        <a href="http://eepurl.com/dkJ1q9" class="btn">Shop now</a>
-      </div>
-    </div>
+  <div class="fulltoy-section">
+    <div class="shadow"></div>
+    <div class="thumb"></div>
+    <div id="goat-action" class="goat"></div>
+    <div class="goat-squeezed"></div>
+    <div class="arm"></div>
   </div>
 
   <!-- BEGIN FOOTER -->   
@@ -101,77 +96,14 @@
       No animals have been harmed while making this website ✌️
     </div>
   </footer>
-  <!-- END FOOTER -->   
+  <!-- END FOOTER -->
 
 
-  <audio src="meeh.mp3" preload="auto" id="meeh"/>
+  <!-- BEGIN SCREAM -->
+  <audio src="./assets/scream.mp3" preload="auto" id="scream"/>
+  <!-- END SCREAM -->
 
-  <script>
-    var illoPos = document.querySelectorAll('[data-hover');
-    var illoContainer = document.querySelector('.illo-container');
-    var lastPos = null;
-    var playedIllo = false;
-    var meehIllo = false;
-    for (var i = 0; i < illoPos.length; i++) {
-      illoPos[i].addEventListener('mouseover', function() {
-        illoContainer.setAttribute('data-pos', this.getAttribute('class'));
-        lastPos = this.getAttribute('class');
-        if (!playedIllo) {
-          gtag('event', 'illo-over', { 'event_category': this.getAttribute('class') });
-          playedIllo = true;
-        }
-      });
-      illoPos[i].addEventListener('mouseout', function() {
-        illoContainer.removeAttribute('data-pos');
-        lastPos = null;
-      });
-    }
-    illoContainer.addEventListener('mousedown', function() {
-      this.setAttribute('data-pos', 'illo-open');
-      document.getElementById('meeh').currentTime = 0;
-      document.getElementById('meeh').play();
-      if (!meehIllo) {
-        gtag('event', 'illo-meeh');
-        meehIllo = true;
-      }
-    });
-
-    illoContainer.addEventListener('mouseup', function() {
-      this.setAttribute('data-pos', lastPos);
-      document.getElementById('meeh').pause();
-      
-    });
-
-		var enableScroll = document.querySelector('section.hero') ? document.querySelector('section.hero').getBoundingClientRect().height : 0;
-		var fixedHeader = false;
-		var timeoutFixedEnd;
-    document.addEventListener('scroll', () => {
-      if (!fixedHeader && window.scrollY > enableScroll) {
-        document.querySelector('body').setAttribute('class', 'fixed-header');
-				fixedHeader = true;
-      } else if (fixedHeader && window.scrollY <= 100) {
-        clearTimeout(timeoutFixedEnd);
-        document.querySelector('body').removeAttribute('class');
-        fixedHeader = false;
-      } else if (fixedHeader && window.scrollY <= enableScroll) {
-        document.querySelector('body').setAttribute('class', 'fixed-header fixed-header-end');
-				timeoutFixedEnd = window.setTimeout(function() {
-					document.querySelector('body').removeAttribute('class');
-          fixedHeader = false;
-					timeoutFixedEnd = null;
-				}, 300);
-      } 
-    });
-
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      if (document.getElementById('navbar').getAttribute('class') === 'navbar-collapse collapse') {
-        document.getElementById('navbar').setAttribute('class', 'navbar-collapse')
-      } else {
-        document.getElementById('navbar').setAttribute('class', 'navbar-collapse collapse')
-      }
-    });
-  </script>
-
+  <script src="./assets/main.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110375132-3"></script>
   <script>
@@ -180,21 +112,6 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-110375132-3');
-
-    document.querySelector('.actions .btn').addEventListener('click', function () {
-      gtag('event', 'cta-click', { 'event_category' : 'hero' });
-    });
-
-    document.querySelector('.cta .btn').addEventListener('click', function () {
-      gtag('event', 'cta-click', { 'event_category' : 'bottom' });
-    });
-
-    window.setTimeout(function() {
-      illoContainer.setAttribute('data-pos', 'illo-left');
-        window.setTimeout(function() {
-          illoContainer.removeAttribute('data-pos');
-        }, 500);
-    }, 3000);
   </script>
 </body>
 </html>

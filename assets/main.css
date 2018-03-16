@@ -612,3 +612,96 @@ body.fixed-header-end header {
     float: right;
   }
 }
+
+.fulltoy-section {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background: #4AD5FD url('./images/sparks.svg') no-repeat center center;
+  border-bottom: 2px solid #2FA7C9; 
+}
+
+@media (max-width: 768px) {
+  .fulltoy-section {
+    zoom: 0.7;
+  }
+}
+.fulltoy-section .goat {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -76px; 
+  width: 153px;
+  height: 549px;
+  background: transparent url('./images/goat.svg');
+  z-index: 20;
+  cursor: pointer;
+}
+
+.fulltoy-section .goat.squeezed {
+  margin-left: -129px; 
+  width: 258px;
+  height: 541px;
+  background: transparent url('./images/goat-squeezed.svg');
+}
+
+.fulltoy-section .goat-squeezed {
+  background: transparent url('./images/goat-squeezed.svg') no-repeat;
+}
+
+
+.fulltoy-section .arm {
+  position: absolute;
+  top: 235px;
+  left: 50%;
+  margin-left: -78px; 
+  width: 522px;
+  height: 195px;
+  background: transparent url('./images/arm.svg');
+  z-index: 10;  
+}
+
+.fulltoy-section .thumb {
+  position: absolute;
+  top: 337px;
+  left: 50%;
+  margin-left: -22px; 
+  width: 126px;
+  height: 56px;
+  background: transparent url('./images/thumb.svg');
+  z-index: 30;
+}
+
+.fulltoy-section .shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: 383px;
+  width: 50%;
+  background-image: linear-gradient(90deg,
+    rgba(74,213,253,0.00) 0%, #4AD5FD 59px,
+    #4AD5FD 60px, #4AD5FD 100%);
+  z-index: 40;
+}
+
+@keyframes impatient {
+  0%   {transform: translateX(220px);}
+  25%  {transform: translateX(150px);}
+  50%  {transform: translateX(160px);}
+  80% {transform: translateX(210px);}
+  100% {transform: translateX(220px);}
+}
+
+.fulltoy-section .arm, .fulltoy-section .thumb {
+  transform: translateX(220px);
+  animation: impatient 5s infinite 1s;
+  transition: .5s ease-in transform;  
+  animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.fulltoy-section.squeezed .arm, .fulltoy-section.squeezed .thumb {
+  transform: translateX(0);
+  animation: none;
+  transition: 300ms ease-in transform;
+}
