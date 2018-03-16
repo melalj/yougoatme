@@ -70,18 +70,6 @@ section.hero legend {
   font-size: 18px;
 }
 
-section.hero {
-
-}
-
-
-section.hero .hero-center {
-}
-
-.main-left {
-
-}
-
 .main-right {
   width: 380px;
   margin: 20px;
@@ -97,6 +85,9 @@ section.hero .hero-center {
   background-position: 0 0;
   cursor: pointer;
   overflow: hidden;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .illo-container[data-pos="illo-open"] {
@@ -636,6 +627,9 @@ body.fixed-header-end header {
   background: transparent url('./images/goat.svg');
   z-index: 20;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .fulltoy-section .goat.squeezed {
@@ -657,7 +651,7 @@ body.fixed-header-end header {
   margin-left: -78px; 
   width: 522px;
   height: 195px;
-  background: transparent url('./images/arm.svg');
+  background: transparent url('./images/hand.svg');
   z-index: 10;  
 }
 
