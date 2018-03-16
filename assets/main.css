@@ -376,7 +376,8 @@ footer {
   text-align: center;
   font-size: 14px;
   color: #6ACDE8;
-  padding: 30px 0;   
+  padding: 30px 0;
+  margin-bottom: 60px;
 }
 
 .footer-credits strong {
@@ -623,7 +624,7 @@ body.fixed-header-end header {
   margin-left: -76px; 
   width: 153px;
   height: 549px;
-  background: transparent url('./images/goat.svg');
+  background: transparent url('./images/goat.svg') no-repeat;
   z-index: 20;
 }
 
@@ -631,7 +632,7 @@ body.fixed-header-end header {
   margin-left: -129px; 
   width: 258px;
   height: 541px;
-  background: transparent url('./images/goat-squeezed.svg');
+  background: transparent url('./images/goat-squeezed.svg') no-repeat;
 }
 
 .fulltoy-section #goat-action {
@@ -657,7 +658,7 @@ body.fixed-header-end header {
   margin-left: -78px; 
   width: 522px;
   height: 195px;
-  background: transparent url('./images/hand.svg');
+  background: transparent url('./images/hand.svg') no-repeat;
   z-index: 10;  
 }
 
@@ -668,7 +669,7 @@ body.fixed-header-end header {
   margin-left: -22px; 
   width: 126px;
   height: 56px;
-  background: transparent url('./images/thumb.svg');
+  background: transparent url('./images/thumb.svg') no-repeat;
   z-index: 30;
 }
 
@@ -809,7 +810,7 @@ body.fixed-header-end header {
     margin: 0;
     left: 0;
     text-align: center;
-    margin-top: 310px;
+    margin-top: 320px;
     background: rgba(0, 0, 0, 0.8);
     
   }
@@ -822,6 +823,7 @@ body.fixed-header-end header {
   height: 264px;
   background-color: #FD64A0;
   box-shadow: 2px 2px 0 0 #FDBFD7;
+  z-index: 100;
 }
 
 .sticky-social-container {
