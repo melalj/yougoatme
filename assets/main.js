@@ -119,6 +119,7 @@ var fullGoat = document.querySelector('#goat-action');
 var fullGoatHadLoggedEvent = false;
 
 var fullGoatFirstSqueeze = 0;
+
 var fullGoatTimeoutSqueeze;
 var fullGoatTimeoutRelease;
 var fullGoatTimeoutReset;
