@@ -32,7 +32,7 @@ function menuMobileOnClick() {
   }
 }
 
-document.getElementById('nav-toggle').addEventListener('click', menuMobileOnClick);
+document.querySelector('.nav-toggle').addEventListener('click', menuMobileOnClick);
 
 // GA EVENT TRACKING
 var tagWithEventTracking = document.querySelectorAll('[data-event-click]');

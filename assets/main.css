@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: 'Museo';
   src: url('./fonts/Museo-900.woff');
@@ -17,6 +19,159 @@
   src: url('./fonts/Museo-300.woff');
   font-weight: bolder;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "yougoatme";
+  src:url("./fonts/yougoatme.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "yougoatme" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "yougoatme" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-caret-small-down {
+  position: relative;
+  top: 3px;
+}
+
+.icon-facebook:before {
+  content: "\62";
+}
+.icon-arrow-down:before {
+  content: "\61";
+}
+.icon-arrow-right:before {
+  content: "\63";
+}
+.icon-triangle-down:before {
+  content: "\64";
+}
+.icon-cart:before {
+  content: "\65";
+}
+.icon-cross:before {
+  content: "\66";
+}
+.icon-facebook-1:before {
+  content: "\67";
+}
+.icon-goat:before {
+  content: "\68";
+}
+.icon-goat-logo:before {
+  content: "\69";
+}
+.icon-instagram:before {
+  content: "\6a";
+}
+.icon-menu:before {
+  content: "\6b";
+}
+.icon-separator:before {
+  content: "\6c";
+}
+.icon-twitter:before {
+  content: "\6d";
+}
+.icon-producthunt:before {
+  content: "\6e";
+}
+.icon-whatsapp:before {
+  content: "\6f";
+}
+.icon-messenger:before {
+  content: "\70";
+}
+.icon-pinterest:before {
+  content: "\71";
+}
+.icon-cart-full:before {
+  content: "\72";
+}
+.icon-cart-empty:before {
+  content: "\73";
+}
+.icon-bag:before {
+  content: "\74";
+}
+.icon-emoji-love:before {
+  content: "\75";
+}
+.icon-emoji-happy:before {
+  content: "\76";
+}
+.icon-pinterest-round:before {
+  content: "\77";
+}
+.icon-facebook-round:before {
+  content: "\78";
+}
+.icon-twitter-round:before {
+  content: "\79";
+}
+.icon-caret-small-right:before {
+  content: "\7a";
+}
+.icon-caret-small-down:before {
+  content: "\41";
+}
+.icon-caret-large-right:before {
+  content: "\42";
+}
+.icon-caret-large-left:before {
+  content: "\43";
+}
+.icon-check-light:before {
+  content: "\44";
+}
+.icon-cross-light:before {
+  content: "\45";
+}
+.icon-tshirt:before {
+  content: "\46";
+}
+.icon-tshirt2:before {
+  content: "\47";
+}
+.icon-discount:before {
+  content: "\48";
+}
+.icon-heart:before {
+  content: "\49";
+}
+.icon-export:before {
+  content: "\4a";
+}
+.icon-share:before {
+  content: "\4b";
+}
+.icon-youtube:before {
+  content: "\4c";
 }
 
 body {
@@ -238,14 +393,6 @@ section.hero .hero-bottom {
   }
 }
 
-.arrow-down {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background: transparent url('./images/arrow-down.svg');
-  margin: 0 10px;
-}
-
 .story {
   background: transparent url('./images/path.svg') no-repeat;
   background-position-x: center; 
@@ -439,6 +586,7 @@ header {
   background-color: #4AD5FD;
   display: block;
   position: relative;
+  padding: 20px 0;
 }
 
 header > nav > .container {
@@ -472,12 +620,14 @@ header > nav > .container {
   text-decoration: none;
   color: #ffffff;
   font-weight: normal;
-  margin: 0 20px;
-  padding: 3px;
+  margin: 0 10px;
+  padding: 10px 15px;
+  border-radius: 3px;
 }
 
 .nav > li > a:not(.btn):hover {
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
   border-bottom: 2px solid #fff;
 }
 
@@ -500,6 +650,15 @@ header > nav > .container {
 .nav-cta {
   float: right;
   margin: 12px;
+  display: none;
+}
+
+body.fixed-header  header {
+  padding :0;
+}
+
+body.fixed-header .nav-cta {
+  display: block;
 }
 
 body.fixed-header header {
@@ -555,6 +714,10 @@ body.fixed-header-end header {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding :0;
+  }
+
   .nav-brand {
     padding-right: 0;
   }
@@ -567,6 +730,8 @@ body.fixed-header-end header {
     cursor: pointer;
     display: block;
     float: left;
+    color: #FFF;
+    font-size: 20px;
     margin: 23px 15px 23px 5px;
   }
 
@@ -607,7 +772,7 @@ body.fixed-header-end header {
 
 .fulltoy-section {
   position: relative;
-  height: 700px;
+  height: 720px;
   overflow: hidden;
   background: #4AD5FD url('./images/sparks.svg') no-repeat center center;
 }
@@ -619,7 +784,7 @@ body.fixed-header-end header {
 }
 .fulltoy-section .goat {
   position: absolute;
-  top: 30px;
+  top: 90px;
   left: 50%;
   margin-left: -76px; 
   width: 153px;
@@ -638,7 +803,7 @@ body.fixed-header-end header {
 .fulltoy-section #goat-action {
   background: transparent url('./images/goat-squeezed.svg') no-repeat -9999px -9999px;
   position: absolute;
-  top: 30px;
+  top: 90px;
   left: 50%;
   margin-left: -76px; 
   width: 153px;
@@ -650,10 +815,9 @@ body.fixed-header-end header {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-
 .fulltoy-section .arm {
   position: absolute;
-  top: 235px;
+  top: 295px;
   left: 50%;
   margin-left: -78px; 
   width: 522px;
@@ -664,7 +828,7 @@ body.fixed-header-end header {
 
 .fulltoy-section .thumb {
   position: absolute;
-  top: 337px;
+  top: 397px;
   left: 50%;
   margin-left: -22px; 
   width: 126px;
@@ -774,13 +938,13 @@ body.fixed-header-end header {
   left: 50%;
   text-decoration: none;
   transition: 300ms ease-in background-color;   
+  transition: 300ms ease-in transform;   
 }
 
 .collage-shadow:hover .collage-button {
   background: rgba(0, 0, 0, 0.8);
-  transition: 300ms ease-in background-color;   
+  transform: scale(1.1);
 }
-
 
 @media (max-width: 768px) {
   .impact-section {
@@ -822,8 +986,23 @@ body.fixed-header-end header {
   left: 10px;
   height: 264px;
   background-color: #FD64A0;
+  border:1px solid #C34A7A;
   box-shadow: 2px 2px 0 0 #FDBFD7;
   z-index: 100;
+  transform: translateY(70px);
+  transition: 300ms ease-in transform;
+}
+
+@media (max-width: 768px) {
+  .sticky-social {
+    text-align: center;
+    left: 0;
+    width: 100%;
+  }
+}
+
+body.fixed-header .sticky-social {
+  transform: translateY(0px);
 }
 
 .sticky-social-container {
@@ -852,4 +1031,57 @@ body.fixed-header-end header {
 .sticky-social a img {
   vertical-align: middle;
   border: 0;
+}
+
+.invisible-top-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -300px;
+  height: 300px;
+  background: #4AD5FD url('./images/goat-hidden.png') no-repeat bottom center;  
+  background-size: 70px 70px;
+  z-index: 90000;
+}
+
+.bullet {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding-right: 2px;
+  padding-top: 2px;
+  border-radius: 100%;
+  margin-left: 4px;
+  width: 20px;
+  height: 21px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.bubble {
+	position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 2px 0 0 #43BBDD;
+  border-radius: 3px;
+  width: 160px;
+  font-size: 14px;
+  color: #FD64A0;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin: 10px auto;  
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #FFFFFF;
+	border-bottom: 0;
+	margin-left: -10px;
+	margin-bottom: -10px;
 }
