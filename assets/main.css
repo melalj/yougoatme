@@ -192,10 +192,18 @@ body {
   content: " ";
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;  
+}
+
 section.hero {
   color: #ffffff;
   background-color: #4AD5FD;
-  border-bottom: 2px solid #2FA7C9; 
 }
 
 section.hero h1 {
@@ -322,11 +330,12 @@ section.hero legend {
   }
 }
 
-section.hero .hero-bottom {
+.hero-bottom {
   display: flex;
-  height: 50px;
-  align-items: center;
+  height: 150px;
   justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 50px, 0% 100%);
+  background-color: #4AD5FD;
 }
 
 .btn {
@@ -399,6 +408,7 @@ section.hero .hero-bottom {
   min-height: 1571px;
   width: 1024px;
   margin: 0 auto;
+  margin-top: -50px;
 }
 
 .story article {
@@ -441,6 +451,7 @@ section.hero .hero-bottom {
     background: transparent;
     width: 100%;
     min-height: inherit;
+    margin-top: 0px;  
   }
 
   .story article {
@@ -1039,8 +1050,7 @@ body.fixed-header .sticky-social {
   right: 0;
   top: -300px;
   height: 300px;
-  background: #4AD5FD url('./images/goat-hidden.png') no-repeat bottom center;  
-  background-size: 70px 70px;
+  background: #4AD5FD url('./images/goat-refresh.svg') no-repeat bottom center;  
   z-index: 90000;
 }
 
@@ -1069,7 +1079,8 @@ body.fixed-header .sticky-social {
   font-weight: bold;
   text-align: center;
   padding: 10px;
-  margin: 10px auto;  
+  margin: 10px auto;
+  animation: hop 2s ease infinite;  
 }
 
 .bubble:after {
@@ -1084,4 +1095,24 @@ body.fixed-header .sticky-social {
 	border-bottom: 0;
 	margin-left: -10px;
 	margin-bottom: -10px;
+}
+
+@keyframes hop {
+  0% {
+      transform: translate3d(0, 0, 0)
+  }
+
+  50% {
+      transform: translate3d(0, 10%, 0)
+  }
+
+  100% {
+      transform: translate3d(0, 0, 0)
+  }
+}
+
+.hero-scroll {
+  font-size: 72px;
+  color: #FFF;
+  animation: hop 2s ease infinite;
 }

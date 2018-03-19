@@ -133,7 +133,7 @@ function fullGoatOnSqueeze() {
   var deltaTriggerScream = (dateDiffTriggerScream > 300) ? 300 : 0;
   if (fullGoatFirstSqueeze) fullGoatFirstSqueeze = Date.now();  
 
-  fullGoat.parentNode.setAttribute('class', 'fulltoy-section squeezed');
+  fullGoat.parentNode.setAttribute('class', 'fulltoy-section noselect squeezed');
   fullGoatTimeoutSqueeze = window.setTimeout(function() {
     fullGoatBackground.setAttribute('class', 'goat squeezed');
     audioScream.currentTime = 0;
@@ -156,7 +156,7 @@ function fullGoatOnRelease() {
     fullGoatFirstSqueeze = null;
   }, 600);
   fullGoatBackground.setAttribute('class', 'goat');
-  fullGoat.parentNode.setAttribute('class', 'fulltoy-section');
+  fullGoat.parentNode.setAttribute('class', 'fulltoy-section noselect');
   audioScream.pause();
 }
 
