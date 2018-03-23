@@ -59,6 +59,11 @@
   top: 3px;
 }
 
+.icon-arrow-right {
+  position: relative;
+  top: 2px;
+}
+
 .icon-facebook:before {
   content: "\62";
 }
@@ -1270,6 +1275,73 @@ body.fixed-header .sticky-social {
   background-color: #fff;
 }
 
+.item-toy{
+  position: absolute;
+  top: -45px;
+  width: 77px;
+  height: 275px;
+  left: 116px;
+  z-index: 3;
+}
+
+.item-toy-hand-mask{
+  position: absolute;
+  top: 69px;
+  width: 267px;
+  height: 100px;
+  right: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+@keyframes impatient-store {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(-15px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes impatient-store-hover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30px);
+  }
+}
+
+.item-toy-hand{
+  position: absolute;
+  top: 0;
+  width: 267px;
+  height: 100px;
+  right: -175px;
+  z-index: 5;
+  transform: translateX(0px);  
+  animation: impatient-store 5s infinite;
+}
+
+.item:hover .item-toy-hand{
+  animation: impatient-store-hover 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.item-toy img {
+  -webkit-filter: drop-shadow(0px 0px 6px rgba(0,0,0,0.1)); 
+            filter: drop-shadow(0px 0px 6px rgba(0,0,0,0.1));
+}
+
 .item-thumb {
   position: absolute;
   top: -3px;
@@ -1325,6 +1397,17 @@ body.fixed-header .sticky-social {
   animation-timing-function: ease-in-out;
 }
 
+.item-toy-shadow {
+  position: absolute;
+  bottom: 10px;
+  width: 77px;
+  height: 13px;
+  left: 116px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 100%;
+  z-index: 2;
+}
+
 .item-bottom {
   display: flex;
   justify-content: space-between;
@@ -1364,7 +1447,6 @@ body.fixed-header .sticky-social {
 .item-empty {
   width: 310px;
   height: 360px;
-  cursor: pointer;
   display: inline-block;
   margin: 20px;
   border: 1px dashed #e2e2e2;

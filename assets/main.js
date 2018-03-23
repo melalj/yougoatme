@@ -186,6 +186,16 @@ function onReady() {
       this.querySelector('a').click();
     });
   }
+
+  // ATTACH LINK TO ITEM
+  if (document.querySelectorAll('.item').length){
+    var items = document.querySelectorAll('.item');
+    for (var i = 0; i < items.length; i += 1) {
+      items[i].addEventListener('click', function() {
+        this.querySelector('a').click();
+      });
+    } 
+  }
 }
 
 document.addEventListener('DOMContentLoaded', onReady, false);
