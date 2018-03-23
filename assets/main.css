@@ -988,7 +988,7 @@ body.fixed-header-end header {
 .collage-button {
   display: inline-block;
   padding: 10px 20px;
-  color: #fff;
+  color: #fff !important;
   font-size: 18px;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 64px;
@@ -1228,6 +1228,7 @@ body.fixed-header .sticky-social {
   cursor: pointer;
   display: inline-block;
   margin: 20px;
+  vertical-align: top;
 }
 
 .item-top {
@@ -1366,6 +1367,23 @@ body.fixed-header .sticky-social {
   cursor: pointer;
   display: inline-block;
   margin: 20px;
-  border: 1px solid #e2e2e2;
+  border: 1px dashed #e2e2e2;
   background-color: #fafafa;
+  vertical-align: top;
+  border-radius: 16px;
+}
+
+.item-empty-content {
+  font-size: 16px;
+  color: #7d8d96;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.item-empty-content p {
+  padding: 30px;
+  display: block;  
 }
