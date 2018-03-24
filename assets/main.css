@@ -1624,7 +1624,7 @@ body.fixed-header .sticky-social {
 }
 
 .product-left img{
-  height: 600px;
+  height: 620px;
   width: auto;
 }
 
@@ -1722,6 +1722,7 @@ select {
   background: #fff url('./images/triangle.svg') no-repeat center right;
   padding-right: 40px;  
   cursor: pointer;
+  margin-top: 5px;
 }
 
 select:focus {
@@ -1749,15 +1750,18 @@ select:active {
 
 .product-add-right {
   text-align: center;
+  flex-grow:1;
+  padding-left: 15px;
 }
 
 .product-add-cta .btn {
   margin: 0;
-  padding: 20px 100px 21px;
+  padding: 20px 0 21px;
+  width: 100%;
 }
 
 .product-add-cta .sub {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 12px;
   text-align: center;
   width: 100%;
