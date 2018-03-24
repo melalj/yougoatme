@@ -196,6 +196,14 @@ function onReady() {
       });
     } 
   }
+
+  // CURSOR SCROLL
+  if (document.querySelector('.hero-scroll')) {
+    document.querySelector('.hero-scroll').addEventListener('click', function() {
+      var scrollY = document.querySelector('.story').getBoundingClientRect().top + window.scrollY;
+      window.scrollTo(0, scrollY);
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', onReady, false);
